@@ -30,7 +30,7 @@ A △ B （AとBの排他的論理和：A ∪ B - A ∩ B）
 
 #### カルノー図
 ¬A・¬B・¬D + B・D 
-| AB\CD | 00 | 01 | 11 | 10 |
+| ABCD | 00 | 01 | 11 | 10 |
 | ---- | ---- | ---- | ---- |
 | 00 | 1 | | | 1 |
 | 01 | | 1 | 1 | |
@@ -174,6 +174,31 @@ P(J)：事象Jの起こる確率
 ### 関係データベースの演算
 
 ### SQL
+
+**DDL**： Data Definition Language. CREATE, DROP.
+**DML**： Data Manipulation Language. SELECT, INSERT, UPDATE, DELETE
+
+#### 選択項目リスト
+**||**：連結演算子
+**DISTINCT**：重複を取り除く
+**COALESCE(..., ..., 0)**：NULLでない最初の引数を返す
+**CASE WHEN A < B THEN 1 ELSE 0 END**
+
+#### WHERE
+**BETWEEN 10 AND 20**：10も20も含む
+**IN**：リスト内一致
+**LIKE**：文字列部分一致
+**IS NULL**
+**NOT**
+
+#### GROUP BY
+**集約関数**
+AVG, MAX, MIN, SUM, COUNT, COUNT DISTINCT
+
+**HAVING**：GROUP BYする条件を指定
+
+#### ORDER BY
+列 ASC
 
 ### データ定義言語
 
