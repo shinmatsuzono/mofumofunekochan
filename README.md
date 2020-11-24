@@ -29,9 +29,10 @@ A △ B （AとBの排他的論理和：A ∪ B - A ∩ B）
 
 
 #### カルノー図
-¬A・¬B・¬D + B・D 
+¬A・¬B・¬D + B・D
+
 | ABCD | 00 | 01 | 11 | 10 |
-| ---- | ---- | ---- | ---- |
+| ---- | ---- | ---- | ---- | ---- |
 | 00 | 1 | | | 1 |
 | 01 | | 1 | 1 | |
 | 11 | | 1 | 1 | |
@@ -168,47 +169,67 @@ P(J)：事象Jの起こる確率
 ### データベースの基礎
 
 #### 文字列
-CHAR(n)：1〜255字の半角固定長文字列
-NCHAR(n)：1〜127字の全角固定長文字列
-VARCHAR(n)：1〜8,000字の半角可変長文字列
-NCHARVARYING(n)：1〜4,000字の全角可変長文字列
+CHAR(n)：1〜255字の半角固定長文字列  
+NCHAR(n)：1〜127字の全角固定長文字列  
+VARCHAR(n)：1〜8,000字の半角可変長文字列  
+NCHARVARYING(n)：1〜4,000字の全角可変長文字列  
 
 #### 数値
-SMALLINT：-32,768〜32,767の範囲内の整数（3万越え）
-INTEGER：SMALLINTより領域が必要な場合
-DECIMAL(m,n)：精度m、位取りnの10進数
+SMALLINT：-32,768〜32,767の範囲内の整数（3万越え）  
+INTEGER：SMALLINTより領域が必要な場合  
+DECIMAL(m,n)：精度m、位取りnの10進数 
+
+#### カラム制約
+
+**候補キー (candidate key)**：主キーの候補。複数存在可、NULL可。
+**スーパーキー**：タプルを一つに特定できればなんでも良い。
+**サロゲートキー（surrogate key）**：行のID
+
+`CHECK(単価>=100)`
+
+`FOREIGN KEY table2.column2 REFERENCES table1.column1`  
+`ONDELETE / ONUPDATE`に対して  
+`NO ACTION`：何もしない  
+`CASCADE`：データ連携更新削除可能  
+`SET NULL`：NULLを挿入して更新削除可能  
 
 ### 関係データベース
 
+#### ビュー
+
+`CREATE VIEW view (col1, col2,...) AS SELECT ...`に対して  
+`WITH CHECK OPTION`で挿入前に指定条件に合致するかチェックできる
+
 ### 正規化
+ここから
 
 ### 関係データベースの演算
 
-`UNION`：和。重複はまとめる。
-`UNION ALL`：和。重複もそのまま表示。
-`EXCEPT`：差。共通のものを取り去る。
-直積：全ての組み合わせ。等結合は直積と選択。
-`INTERSECT`：積。AND。
-商：掛け算の逆
+`UNION`：和。重複はまとめる。  
+`UNION ALL`：和。重複もそのまま表示。  
+`EXCEPT`：差。共通のものを取り去る。  
+直積：全ての組み合わせ。等結合は直積と選択。  
+`INTERSECT`：積。AND。  
+商：掛け算の逆  
 
 
 ### SQL
 
-**DDL**： Data Definition Language. CREATE, DROP.
-**DML**： Data Manipulation Language. SELECT, INSERT, UPDATE, DELETE
+**DDL**： Data Definition Language. CREATE, DROP.  
+**DML**： Data Manipulation Language. SELECT, INSERT, UPDATE, DELETE  
 
 #### 選択項目リスト
-`||`：連結演算子
-`DISTINCT`：重複を取り除く
-`COALESCE(..., ..., 0)`：NULLでない最初の引数を返す
-`CASE WHEN A < B THEN 1 ELSE 0 END`
+`||`：連結演算子  
+`DISTINCT`：重複を取り除く  
+`COALESCE(..., ..., 0)`：NULLでない最初の引数を返す  
+`CASE WHEN A < B THEN 1 ELSE 0 END`  
 
 #### WHERE
-`BETWEEN 10 AND 20`：10も20も含む
-`IN`：リスト内一致
-`LIKE`：文字列部分一致
-`IS NULL`
-`NOT`
+`BETWEEN 10 AND 20`：10も20も含む  
+`IN`：リスト内一致  
+`LIKE`：文字列部分一致  
+`IS NULL`  
+`NOT`  
 
 #### GROUP BY
 **集約関数**
@@ -221,10 +242,10 @@ AVG, MAX, MIN, SUM, COUNT, COUNT DISTINCT
 
 #### 結合
 **内部結合**
-`SELECT table1.columnA FROM table1, table2 WHERE table1.columnA = table2.columnA`
-`SELECT table1.columnB FROM table1 JOIN table2　ON table1.column1 = table2.column2`
-※ 同じ列名の場合`ON`ではなく`USING`を使うことができる
-※ 結合条件の列重複をなくす場合は`NATURAL JOIN`を使うことができる
+`SELECT table1.columnA FROM table1, table2 WHERE table1.columnA = table2.columnA`  
+`SELECT table1.columnB FROM table1 JOIN table2　ON table1.column1 = table2.column2`  
+※ 同じ列名の場合`ON`ではなく`USING`を使うことができる  
+※ 結合条件の列重複をなくす場合は`NATURAL JOIN`を使うことができる  
 
 **外部結合**
 LEFT JOIN, RIGHT JOIN, FULL JOIN
@@ -236,14 +257,23 @@ LEFT JOIN, RIGHT JOIN, FULL JOIN
 IN句よりEXISTS句の方が処理速度が早い
 
 #### DB操作
-`INSERT INTO table1 (column1, column2) VALUES(10, 20)`
-`INSERT INTO table1 column1 SELECT DISTINCT column2 FROM table2`
-`UPDATE table1 SET column1 = 10 WHERE column2 = 20`
+`INSERT INTO table1 (column1, column2) VALUES(10, 20)`  
+`INSERT INTO table1 column1 SELECT DISTINCT column2 FROM table2`  
+`UPDATE table1 SET column1 = 10 WHERE column2 = 20`  
+
+#### 権限
+`GRANT role ON table TO user`  
+`WITH GRANT OPTION`を指定したユーザは、他のユーザに権限付与が可能になる  
+
+`REVOKE role ON table FROM user`
 
 
 ### データ定義言語
 
 ### 埋め込み方式
+`EXEC SQL DECLARE cursor_name CURSOR FOR`
+`OPEN` `FETCH` `CLOSE`
+`SQLSTATE`
 
 ### データベース管理システム
 
