@@ -5,7 +5,6 @@
 
 #### 選択項目リスト
 `||`：連結演算子  
-`DISTINCT`：重複を取り除く  
 `COALESCE(..., ..., 0)`：NULLでない最初の引数を返す  
 `CASE WHEN A < B THEN 1 ELSE 0 END`  
 
