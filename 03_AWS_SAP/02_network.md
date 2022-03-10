@@ -6,7 +6,9 @@
 
 - CIDRの重複は不可
 
-## PrivateLink
+## VPCエンドポイント
+
+### PrivateLink(インターフェース型VPCE)
 
 - VPC to オンプレ/他VPC/AWSサービスをセキュアに簡単に接続
   - IGWが不要になる
@@ -26,6 +28,13 @@
 - PublicVIF パブリックリソースに接続するときに使う(S3など)
 - PrivateVIF VPCに接続するときに使う
 
+## Managed VPN
+
+- ネットワーク機器の用意が必要
+- VPC側には下記を作成
+  - オンプレ側機器に対応した Customer Gateway (CGW)
+  - AWS側のVPNを有効にするためのVirtual Private Gateway (VGW)
+
 ## ユースケース
 
 ### VPN接続したい
@@ -44,4 +53,3 @@
 
 - 502 Bad Gateway
   - Lambda関数の同時実行制限など内部サーバーエラー
-  
