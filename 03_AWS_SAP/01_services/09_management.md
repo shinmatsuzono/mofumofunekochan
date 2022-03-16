@@ -12,6 +12,7 @@
 
 - AWS上のAPIアクセスを監査ログとして残す
 - CloudTrail Insightsで異常パターンの定義と検出
+- ログからAWS操作のRejectを特定
 
 ## Config
 
