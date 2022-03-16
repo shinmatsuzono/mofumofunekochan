@@ -14,3 +14,6 @@
 
 ## CostExprorer & AWS Budgets
 
+## コスト配分タグ
+
+- Billing Dashboardから有効化
