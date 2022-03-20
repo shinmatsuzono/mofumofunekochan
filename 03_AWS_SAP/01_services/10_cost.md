@@ -14,6 +14,16 @@
 
 ## CostExprorer & AWS Budgets
 
-## コスト配分タグ
+## タグ
+
+- タグづけの強制
+  - aws:RequestTag
+  - aws:TagKeys
+
+### コスト配分タグ
 
 - Billing Dashboardから有効化
+
+## 請求アラート
+
+- CloudWatch Alarm + SNS

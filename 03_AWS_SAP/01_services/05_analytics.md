@@ -17,6 +17,8 @@
 
 ## Kinesis
 
+- 単一シャードは1MB/sまで
+
 ## QuickSight
 
 - オンプレ

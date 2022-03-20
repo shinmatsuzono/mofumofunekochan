@@ -8,10 +8,13 @@
 
 ## CloudFormation
 
+- StackSets：1回の操作で複数のアカウントにリソースをデプロイ可能
+
 ## CloudTrail
 
 - AWS上のAPIアクセスを監査ログとして残す
 - CloudTrail Insightsで異常パターンの定義と検出
+  - CloudWatch Eventsで通知
 - ログからAWS操作のRejectを特定
 
 ## Config

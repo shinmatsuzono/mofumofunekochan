@@ -23,6 +23,8 @@
 
 ## WAF
 
+- IGWとは連携不可
+
 ## Shield
 
 - Standard
@@ -56,6 +58,7 @@
 ## Directory Service
 
 - SimpleAD
+  - 小規模・低コストで基本的機能を提供 (MFAなどはなし)
   - Samba4プロトコルに対応したAD互換のディレクトリ
 - AD Connector
   - オンプレ環境やAWS上の既存ディレクトリサービスへの認証プロキシ
@@ -68,8 +71,11 @@
 - AWSアカウントで発生した料金の一元管理
 - SCPの定義
   - SCPとIAMロール両方で許可されたアクションが実行可能
+  - SCPはデフォルトでFullAWSAccessを持つ
 
 ## SSO
 
 - Organizationsで管理される複数のマネコンへのアクセスを許可
 - SAML2.0を利用し、Salesforce、Box、Office365などとも統合可能
+- 一時的な認証機能で、SAMLに対応
+- ログインのためのユーザーポータル

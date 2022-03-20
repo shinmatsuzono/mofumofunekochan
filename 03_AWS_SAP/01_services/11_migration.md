@@ -18,6 +18,8 @@
   - 大量サーバー移行
 - ダウンタイム最小化
 - ネットワーク帯域への影響小
+- VMをAMIとして漸進的にアップロードし、移行時のダウンタイムを最小にする
+- インポートプロセスは自動
 
 ## Application Discovery Service
 
@@ -28,6 +30,11 @@
 ## Migration Hub
 
 - DMS、SMSや3rdPartyなども含めてオンプレ環境の情報収集
+
+## AWS Import/Export
+
+- ストレージデバイスを送付
+- 翌営業日からデータ転送
 
 ## VM Import/Export
 

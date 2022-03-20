@@ -37,6 +37,7 @@
 - デフォルトではIPSecで暗号化されていない
   - Amazon VPC VPNと組み合わせる必要あり
 - 単一障害点となりうるので、バックアップとしてVPNを使う
+  - 同じVGWを使える
 - 他リージョンへの接続は不可
 - 必要な設定
   - オンプレ側
@@ -95,3 +96,9 @@
 
 - 502 Bad Gateway
   - Lambda関数の同時実行制限など内部サーバーエラー
+
+## Route53
+
+- Evaluate Target Health
+- CNAMEの切り替えでBlue/Green Deployができる
+- 加重ラウンドロビンでABテストが可能
