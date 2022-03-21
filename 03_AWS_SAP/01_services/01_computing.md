@@ -2,6 +2,8 @@
 
 ## EC2
 
+- ネットワーク帯域はEC2のインスタンスタイプによって決まる
+
 ### プレイスメントグループ
 
 - クラスター
@@ -18,11 +20,21 @@
 
 - SR-IOV (Single Route I/O Virtulization) でI/Oパフォーマンス向上
 
+### ELB
+
+- スティッキーセッション
+  - 背後のEC2インスタンスはセッションがステートフルになる
+  - ElastiCacheで解消
+
 ## Lambda
 
 - 同時実行制限で呼び出し調整可能
+- Lambda@Edge
+  - CloudFrontをトリガーに関数実行
 
 ## Elastic beanstalk
 
 - プラットフォーム管理のコストを最小化
 - インフラの面倒を見なくて良くなる
+- ECSに比べるとコスト効率でやや難点あり
+- JavaとPHPなどのWebアプリ

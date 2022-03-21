@@ -10,6 +10,9 @@
 
 ## CloudSerch
 
+- PDFファイルのインデックス化
+- PDFファイルのテキスト検索機能
+
 ## Elasticserch Service
 
 - Kibana(BIツール)が付属

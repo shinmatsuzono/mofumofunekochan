@@ -5,10 +5,14 @@
 ## AutoScaling
 
 - DynamoDB、ECS、Auroraのリードレプリカも対象
+- Auto Healing(最小数1)で耐障害性確保
 
 ## CloudFormation
 
-- StackSets：1回の操作で複数のアカウントにリソースをデプロイ可能
+- StackSets
+  - 1回の操作で複数のアカウントにリソースをデプロイ可能
+- Deletion Policy
+  - EBSやRDSの削除を防ぐ
 
 ## CloudTrail
 
@@ -23,12 +27,16 @@
 - Config Rules
   - 違反した場合通知する
   - Lambdaでカスタムルール
+  - タグ付与ルールを作成
 
 ## OpsWorks
 
 - ChefやPuppet(インフラ構成管理ツール)の利用
-- スタック
+- CFnスタック
   - コンポーネントで構成要素をモデル化し、レシピで構成管理
+- Stack
+  - Service単位で分割
+  - Recipe = Service * Layer
 
 ## SystemsManager
 
