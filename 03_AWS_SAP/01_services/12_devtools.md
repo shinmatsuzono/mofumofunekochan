@@ -10,6 +10,7 @@
 
 ## Code Star
 
+- CodeSeriesをワンクリックで構成
 - デプロイ先はEC2, Elastic Beanstalk, Lambdaのみ
 
 ## X-Ray

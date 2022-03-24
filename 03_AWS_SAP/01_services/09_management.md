@@ -14,6 +14,14 @@
 - Deletion Policy
   - EBSやRDSの削除を防ぐ
 
+### ベストプラクティス
+
+- 複数スタックで共通利用するパラメーター：!ImportValueでクロススタック参照
+
+### Service Catalog
+
+- ポートフォリオ内の製品を定義して、展開を容易にする
+
 ## CloudTrail
 
 - AWS上のAPIアクセスを監査ログとして残す
@@ -25,6 +33,7 @@
 
 - 構成変更を記録
 - Config Rules
+  - SNSで通知
   - 違反した場合通知する
   - Lambdaでカスタムルール
   - タグ付与ルールを作成

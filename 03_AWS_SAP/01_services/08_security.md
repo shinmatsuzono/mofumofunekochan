@@ -23,14 +23,17 @@
 
 ## WAF
 
-- IGWとは連携不可
+- 連携不可一覧
+  - EC2
+  - S3
+  - IGW
 
 ## Shield
 
 - Standard
   - レイヤー3,4
 - Advanced
-  - ElasticIP、ELBなども保護対象にできる
+  - EIP、EC2、ELBなども保護対象にできる
   - レイヤー3,4,7
   - DRTから24365サポート
 
@@ -69,9 +72,11 @@
 
 - AWSアカウントの新規作成の自動化
 - AWSアカウントで発生した料金の一元管理
+- CloudTrailの組織に対する有効化
 - SCPの定義
   - SCPとIAMロール両方で許可されたアクションが実行可能
   - SCPはデフォルトでFullAWSAccessを持つ
+  - SCPで条件は指定できない
 
 ## SSO
 

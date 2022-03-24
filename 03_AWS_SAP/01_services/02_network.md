@@ -2,6 +2,8 @@
 
 ## VPC
 
+- CIDRブロックを追加できる
+
 ## VPCFlowLogs
 
 - Networkの通信の疎通確認
@@ -32,6 +34,11 @@
   - パブリックIP不要
   - 独自アプリをプライベート公開できる
 
+### Gateway型VPCE
+
+- S3
+- DynamoDB
+
 ## ENI(Elastic Network Interface)
 
 - NICの役割
@@ -51,6 +58,9 @@
   - VPC側
     - 仮想プライベートゲートウェイ(VGW)の設定
     - VPCルートテーブルの設定（VPGW宛）
+    - 複数の場合
+      - Direct Connect Gateway
+      - 仮想プライベートインターフェース(VIF)を経由
 
 ### DirectConnect Gateway
 
@@ -105,6 +115,11 @@
 
 ## Route53
 
-- Evaluate Target Health
-- CNAMEの切り替えでBlue/Green Deployができる
-- 加重ラウンドロビンでABテストが可能
+- デプロイ
+  - Evaluate Target Health
+  - CNAMEの切り替えでBlue/Green Deployができる
+  - 加重ラウンドロビンでABテストが可能
+- ホスティング
+  - プライベートホストゾーン(コンテナ)
+    - 1つのPHZ用VPCを作成し、ピアリング接続してそれぞれにPHZを関連づけることで、多数のVPCを管理できる
+
