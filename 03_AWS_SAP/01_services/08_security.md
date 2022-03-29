@@ -60,6 +60,8 @@
 
 ## Directory Service
 
+信頼関係の構築にはIAMを使う
+
 - SimpleAD
   - 小規模・低コストで基本的機能を提供 (MFAなどはなし)
   - Samba4プロトコルに対応したAD互換のディレクトリ
@@ -67,6 +69,11 @@
   - オンプレ環境やAWS上の既存ディレクトリサービスへの認証プロキシ
 - Managed Microsoft AD
   - オンプレのADと信頼関係を構築し、統合認証基盤構築
+- ADFS (Active Directory Federation Service)
+  - SAML2.0プロトコルに従ってオンプレとAWSの信頼関係構築
+
+
+
 
 ## Organizations
 
@@ -77,6 +84,7 @@
   - SCPとIAMロール両方で許可されたアクションが実行可能
   - SCPはデフォルトでFullAWSAccessを持つ
   - SCPで条件は指定できない
+  - ブラックリスト・ホワイトリスト両方可能
 
 ## SSO
 

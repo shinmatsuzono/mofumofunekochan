@@ -2,6 +2,8 @@
 
 ## CloudWatch
 
+- レイテンシーをログから分析
+
 ## AutoScaling
 
 - DynamoDB、ECS、Auroraのリードレプリカも対象

@@ -22,6 +22,10 @@
 
 - 単一シャードは1MB/sまで
 
+### Kinesis Agent
+
+- プロデューサー
+
 ## QuickSight
 
 - オンプレ
