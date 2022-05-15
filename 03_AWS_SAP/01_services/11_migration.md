@@ -44,5 +44,7 @@
 ## Snow Family
 
 - Snowball: データ保存に特化
-- Snowball Edge: CPU搭載で加工や集約をしたのちにAWSに移行可能
+- Snowball Edge
+  - CPU搭載で加工や集約をしたのちにAWSに移行可能
+  - 80TB
 - Snowmobile: トレーラー車

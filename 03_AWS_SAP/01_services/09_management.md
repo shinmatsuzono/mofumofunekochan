@@ -15,6 +15,8 @@
   - 1回の操作で複数のアカウントにリソースをデプロイ可能
 - Deletion Policy
   - EBSやRDSの削除を防ぐ
+- ResouceSignal
+  - タイムアウト時間の延長
 
 ### ベストプラクティス
 
@@ -67,3 +69,11 @@
   - セキュリティ
   - フォールトトレランス
   - サービス制限
+
+## License Manager
+
+- ライセンス利用状況を追跡
+
+## Resource Access Manager
+
+- リソースのアカウント間共有
