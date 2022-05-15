@@ -4,12 +4,21 @@
 
 - IDフェデレーション
   - 有効化するとオンプレ環境のADのユーザーを利用可能に
-  - IAMからSAMLプロバイダーを作成し、ロールの信頼ポリシーに設定
-  - AWS SSOエンドポイントにSAMLアサーションをPOSTし、STSから認証情報を取得
+  - 設定手順
+    1. オンプレIdPでSAMLメタデータドキュメントを作成
+    2. IAMからSAMLプロバイダーを作成。1のメタデータを指定
+    3. IAMロールを作成。信頼ポリシーに2のプロバイダーを指定
+    4. saml-metadeta.xmlをオンプレIdPに登録 (AWSを登録)
+  - アクセス手順
+    1. オンプレIdPで認証し、SAMLアサーションを取得
+    2. AWS SSOエンドポイントにSAMLアサーションをPOST
+    3. STSから認証情報が返り、ログイン成功  
+       ※API利用の場合は、STSのAssumeRoleWithSAML利用
 
 ### STS
 
 - アプリケーションから直接アクセスさせるリソースなどで利用
+- IAMから認証情報の取り消し可能
 
 ## KMS
 
@@ -69,11 +78,9 @@
   - オンプレ環境やAWS上の既存ディレクトリサービスへの認証プロキシ
 - Managed Microsoft AD
   - オンプレのADと信頼関係を構築し、統合認証基盤構築
+  - 既存のワークロードの移行で利用する
 - ADFS (Active Directory Federation Service)
   - SAML2.0プロトコルに従ってオンプレとAWSの信頼関係構築
-
-
-
 
 ## Organizations
 
