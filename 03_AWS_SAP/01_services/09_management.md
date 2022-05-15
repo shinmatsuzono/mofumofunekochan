@@ -50,6 +50,8 @@
 - Stack
   - Service単位で分割
   - Recipe = Service * Layer
+  - Layer
+    - 他のServiceと共用はできない
 
 ## SystemsManager
 

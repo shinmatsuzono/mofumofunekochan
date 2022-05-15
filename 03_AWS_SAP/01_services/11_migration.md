@@ -34,7 +34,7 @@
 ## AWS Import/Export
 
 - ストレージデバイスを送付
-- 翌営業日からデータ転送
+- 到着の翌営業日からデータ転送
 
 ## VM Import/Export
 

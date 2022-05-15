@@ -5,6 +5,7 @@
 - 大規模データ分散処理基盤
 - Hadoop/Spark/HBase/Presto/Hive
 - ノードとしてEC2を利用
+  - リザーブドとスポットを組み合わせて利用
 
 ## Athena
 
