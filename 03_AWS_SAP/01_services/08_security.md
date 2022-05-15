@@ -14,6 +14,8 @@
     2. AWS SSOエンドポイントにSAMLアサーションをPOST
     3. STSから認証情報が返り、ログイン成功  
        ※API利用の場合は、STSのAssumeRoleWithSAML利用
+- 請求のみのアクセスポリシー
+  - aws-portal:ViewBilling/ViewUsageを追加
 
 ### STS
 
@@ -90,7 +92,7 @@
 - SCPの定義
   - SCPとIAMロール両方で許可されたアクションが実行可能
   - SCPはデフォルトでFullAWSAccessを持つ
-  - SCPで条件は指定できない
+  - SCPで条件を指定するにはDenyを使う
   - ブラックリスト・ホワイトリスト両方可能
 
 ## SSO
