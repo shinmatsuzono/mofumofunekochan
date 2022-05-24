@@ -6,7 +6,7 @@
 
 ## タグ
 
-- タグづけの強制
+- タグづけの強制 = IAMロール
   - aws:RequestTag
   - aws:TagKeys
 
