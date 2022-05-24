@@ -7,6 +7,7 @@
 ### ENI
 
 - INトラフィックとBEトラフィックを同時制御する用途など
+- NICの役割
 
 ## VPCエンドポイント
 
@@ -23,11 +24,6 @@
 
 - S3
 - DynamoDB
-
-## ENI(Elastic Network Interface)
-
-- NICの役割
-- 複数ネットワーク割り当てなど
 
 ## DirectConnect
 
@@ -49,6 +45,7 @@
 ### DirectConnect Gateway
 
 - 時間当たり課金
+- リージョン間VPCアクセス
 
 ### VIF
 

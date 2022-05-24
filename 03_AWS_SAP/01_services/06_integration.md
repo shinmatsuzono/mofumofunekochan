@@ -19,6 +19,12 @@
 
 ## API Gateway
 
+### Lambdaとの統合
+
+- APIGWがLambdaを呼び出すためのIAMロールを設定
+  - LambdaのARNを指定したロールにする
+  - Lambdaオーソライザー関数を設定する
+
 ## Step Functions
 
 - AWSサービスと連携

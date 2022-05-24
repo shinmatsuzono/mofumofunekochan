@@ -74,6 +74,11 @@
 - インフラの面倒を見なくて良くなる
 - ECSに比べるとコスト効率でやや難点あり
 - JavaとPHPなどのWebアプリ
+- デプロイポリシー
+  - All at once
+  - Rolling
+  - Rolling with additional batch
+  - Immutable
 
 ## ECS
 

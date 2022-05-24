@@ -66,6 +66,12 @@
   - ALBやRoute53のUnhealthy判定より厳密に可用性改善可能
 - オリジンにEC2のPrivateIPは設定できない
 - オンプレ環境の処理のオフロードに活用可能
+- 署名付きURLまたは署名付きCookieでアクセス制限
+- Origin Protocol Policy
+  - HTTP(S) Only
+  - Match Viewer
+- キャッシュヒット率向上
+  - クエリ文字列パラメータの設定
 
 ### HTTPS化
 
