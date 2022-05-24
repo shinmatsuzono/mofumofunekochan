@@ -66,3 +66,9 @@
   - ALBやRoute53のUnhealthy判定より厳密に可用性改善可能
 - オリジンにEC2のPrivateIPは設定できない
 - オンプレ環境の処理のオフロードに活用可能
+
+### HTTPS化
+
+- HTTPS Only
+- Redirect HTTP to HTTPS
+- SSL/TLS証明書
