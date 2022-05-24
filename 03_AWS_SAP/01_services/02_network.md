@@ -2,35 +2,10 @@
 
 ## VPC
 
-- CIDRブロックを追加できる
-
-### ENI
-
-- INトラフィックとBEトラフィックを同時制御する用途など
-- NICの役割
-
-## VPCエンドポイント
-
-### PrivateLink(インターフェース型VPCE)
-
-- VPC to オンプレ/他VPC/AWSサービスをセキュアに簡単に接続
-  - IGWが不要になる
-  - NATGWが不要になる
-  - サービス接続制御が可能
-  - パブリックIP不要
-  - 独自アプリをプライベート公開できる
-
-### Gateway型VPCE
-
-- S3
-- DynamoDB
-
 ## DirectConnect
 
-- デフォルトではIPSecで暗号化されていない
-  - Amazon VPC VPNと組み合わせる必要あり
 - 他リージョンへの接続は不可
-  - リージョン間VPCピアリングを利用
+  - リージョン間VPCピアリング/DCGWを利用
 - 必要な設定(VPN冗長のとき)
   - オンプレ側
     - VPN用のカスタマーゲートウェイ(CGW)の設定
@@ -62,8 +37,6 @@
 
 ## NAT Gateway
 
-- 特定のURLへのアウトバウンドのみ許可、はできない
-  - Proxy機能を持ったEC2インスタンスを作成する
 - IPv6は未サポート
 - マルチAZは手動
 
@@ -84,7 +57,6 @@
 
 - リージョン間VPCピアリング
   - データ転送量課金
-  - AWSのマネージドサービス
 
 ### VPCピアリングできないとき
 
@@ -108,33 +80,23 @@
   - フルメッシュ接続
   - マネージドサービスはインターリージョンVPC
 
-### 公衆回線からVPC
-
-- VPC側にEC2にアプライアンス型のSSL VPNソリューションを配置
-  - LambdaやRDSとは接続できない
-- PC側にSSL VPNクライアントをインストール
-
 ## API Gateway
 
 - エッジ最適化APIエンドポイント
   - 最寄りのCloudFrontエッジロケーションにルーティング
   - ユーザ管理をCognitoで実施可能
 
-- 429 Limit Exceeded
-  - API Gateway 自体のレート制限
+### Lambdaとの統合
 
-- 502 Bad Gateway
-  - Lambda関数の同時実行制限など内部サーバーエラー
+- APIGWがLambdaを呼び出すためのIAMロールを設定
+  - LambdaのARNを指定したロールにする
+  - Lambdaオーソライザー関数を設定する
 
 ## Route53
 
 - デプロイ
   - Evaluate Target Health
   - CNAMEの切り替えでBlue/Green Deployができる
-  - 加重ラウンドロビンでABテストが可能
-- ホスティング
-  - プライベートホストゾーン(コンテナ)
-    - 1つのPHZ用VPCを作成し、ピアリング接続してそれぞれにPHZを関連づけることで、多数のVPCを管理できる
 - DDoS対策
   - シャッフルシャーディング
   - Anycastルーティング

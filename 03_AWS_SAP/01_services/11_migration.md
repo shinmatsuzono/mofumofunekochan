@@ -31,11 +31,6 @@
 
 - DMS、SMSや3rdPartyなども含めてオンプレ環境の情報収集
 
-## AWS Import/Export
-
-- ストレージデバイスを送付
-- 到着の翌営業日からデータ転送
-
 ## VM Import/Export
 
 - SMSと同じ（SMSの方が新しい）

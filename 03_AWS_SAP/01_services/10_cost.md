@@ -1,9 +1,5 @@
 # コスト最適化
 
-## Consolidated Billing(一括請求)
-
-- Organizationで複数AWSアカウントに請求
-
 ## タグ
 
 - タグづけの強制 = IAMロール
