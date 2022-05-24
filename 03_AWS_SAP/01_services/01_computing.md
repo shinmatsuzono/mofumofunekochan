@@ -67,6 +67,10 @@
   - Rolling with additional batch
   - Immutable
 
+## AWS Batch
+
+- 大規模シミュレーションなどのバッチ処理
+
 ## ECS
 
 - Capacity Providerでオートスケーリング設定
